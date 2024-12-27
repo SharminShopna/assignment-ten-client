@@ -1,0 +1,15 @@
+.image{
+    position: relative;
+  }
+  .name{
+    position: absolute;
+    visibility: hidden;
+  }
+  .image:hover .name{
+    visibility: visible;
+  }
+
+  .dark{
+    background-color: rgba(0, 0, 0, 0.824);
+    color: white;
+  }
