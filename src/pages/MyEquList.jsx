@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import { MdDelete } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
+// import emailjs from '@emailjs/browser';
 
 const MyEquList = () => {
   const { user, isDarkMode } = useContext(AuthContext);
@@ -15,20 +16,22 @@ const MyEquList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://assignment-ten-server-lyart-beta.vercel.app/emailMass?email=${user.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setLists(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      });
-  }, [user.email]);
+    if (user?.email) {
+        fetch(`https://assignment-ten-server-lyart-beta.vercel.app/emailMass?email=${user.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setLists(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+                setLoading(false);
+            });
+    }
+}, [user?.email]);
 
-  const handleDelete = (_id) => {
-    Swal.fire({
+const handleDelete = (_id) => {
+  Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
@@ -36,34 +39,28 @@ const MyEquList = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
+  }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assignment-ten-server-lyart-beta.vercel.app/emailMass/${_id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount > 0) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your equipment card has been deleted.",
-                icon: "success",
-              });
-
-              setLists((prevLists) => prevLists.filter((list) => list._id !== _id));
-            }
+          fetch(`https://assignment-ten-server-lyart-beta.vercel.app/emailMass/${_id}`, {
+              method: "DELETE",
           })
-          .catch((error) => {
-            console.error("Error deleting the item:", error);
-            Swal.fire({
-              title: "Error!",
-              text: "Something went wrong while deleting.",
-              icon: "error",
-            });
-          });
+              .then((res) => res.json())
+              .then((data) => {
+                  if (data.deletedCount > 0) {
+                      Swal.fire("Deleted!", "Your equipment card has been deleted.", "success");
+                      setLists((prevLists) => prevLists.filter((list) => list._id !== _id));
+                  } else {
+                      throw new Error("Deletion failed");
+                  }
+              })
+              .catch((error) => {
+                  console.error("Error deleting item:", error);
+                  Swal.fire("Error!", "Unable to delete item. Try again.", "error");
+              });
       }
-    });
-  };
+  });
+};
+
 
   if (loading) {
     return <Loading />;
