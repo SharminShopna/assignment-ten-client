@@ -20,6 +20,8 @@ import AllSportsEquipment from './pages/AllSportsEquipment';
 import MyEquList from './pages/MyEquList';
 import UpdateData from './pages/UpdateData';
 import DiscountEqu from './pages/DiscountEqu';
+import ContactMe from './pages/ContactMe';
+import AboutSection from './pages/AboutSection';
 
 const router = createBrowserRouter([
   {
@@ -79,6 +81,14 @@ const router = createBrowserRouter([
   {
     path:'/discount',
     element:<DiscountEqu></DiscountEqu>
+  },
+  {
+    path:'contact',
+    element:<ContactMe></ContactMe>
+  },
+  {
+    path:'about',
+    element:<AboutSection></AboutSection>
   }
 ])
 

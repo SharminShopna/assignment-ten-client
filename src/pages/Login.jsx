@@ -7,6 +7,8 @@ import { auth } from "../firebase/firebas.init";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import logInLottie from '../assets/lottie/login.json';
+import Lottie from "lottie-react";
 
 
 
@@ -67,6 +69,10 @@ const Login = () => {
         <meta name="description" content="Helmet application" />
       </Helmet>
            <div className="min-h-screen flex justify-center items-center bg-blue-50 my-24" data-aos="zoom-in">
+           <div className="hero-content flex-col lg:flex-row-reverse">
+               <div className="text-center lg:text-left w-96 lg:w-full ml-20">
+               <Lottie animationData={logInLottie}></Lottie>
+                </div>
            <div className="card max-w-2xl w-full rounded-none p-10 shadow-lg">
             <h2 className="text-2xl text-center font-semibold">Login Your Account</h2>
       <form onSubmit={handleSubmit} className="card-body">
@@ -101,6 +107,7 @@ const Login = () => {
       <p className="text-center font-semibold">Do not Have An Account? <Link to="/auth/register" className="text-red-600">Register</Link></p>
     </div> 
         </div> 
+        </div>
         </>
     );
 };

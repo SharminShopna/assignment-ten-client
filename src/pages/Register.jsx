@@ -10,6 +10,8 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import registerLottie from '../assets/lottie/register.json'
+import Lottie from "lottie-react";
 
 
 const auth = getAuth(app)
@@ -91,6 +93,10 @@ const Register = () => {
         <meta name="description" content="Helmet application" />
       </Helmet>
             <div className="min-h-screen mt-20 flex justify-center items-center bg-blue-50" data-aos="zoom-in-up">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+               <div className="text-center lg:text-left w-96 lg:w-full">
+                  <Lottie animationData={registerLottie}></Lottie>
+                </div>
            <div className="card max-w-2xl w-full rounded-none p-10">
             <h2 className="text-2xl text-center font-semibold">Register Your Account</h2>
       <form onSubmit={handleSubmit} className="card-body">
@@ -134,6 +140,7 @@ const Register = () => {
       </form>
       <p className="text-center font-semibold">Already Have An Account? {""} <Link to="/auth/login" className="text-red-600">Login</Link></p>
     </div> 
+        </div>
         </div>
         <Tooltip id="my-tooltip" />
         </>

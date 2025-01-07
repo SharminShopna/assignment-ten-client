@@ -54,7 +54,7 @@ const AddEquipment = () => {
         <title>AddEqu | Sport</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
-       <nav className="w-11/12 mx-auto">
+       <nav className="w-full flex justify-center">
          <Header></Header>
        </nav>
         <div className="bg-blue-50 p-24 mt-28">

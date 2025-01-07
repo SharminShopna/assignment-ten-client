@@ -10,6 +10,7 @@ import off8 from "../assets/off8.png";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet';
+import { MdOutlineDescription } from 'react-icons/md';
 const DiscountEqu = () => {
     const discounts = [
         { title: "50% Off on Footballs", description: "Grab your football now!", price: "150", image: off1 },
@@ -33,7 +34,7 @@ const DiscountEqu = () => {
             <Header></Header>
         </nav>
         <div className=' mt-28'>
-            <h2 className='text-5xl text-center text-blue-900 py-12 font-semibold'>Discount Equipment</h2>
+            <h2 className='text-5xl text-center text-blue-900 py-12 font-bold'>Discount Equipment</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
           {discounts.map((discount, index) => (
             <div  key={index} className="card card-side bg-base-100 shadow-xl p-4 border rounded-lg flex flex-row">
@@ -43,9 +44,9 @@ const DiscountEqu = () => {
                 alt="Movie" className='' />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">Item Name: {discount.title}</h2>
-              <p>Description: {discount.description}</p>
-              <p>Price: ${discount.price}</p>
+              <h2 className="card-title">{discount.title}</h2>
+              <p className='flex gap-2'><MdOutlineDescription size={20} /> {discount.description}</p>
+              <p>${discount.price}</p>
               <div className="card-actions justify-start">
                 <button className="btn bg-blue-900 text-white">Get Offer</button>
               </div>

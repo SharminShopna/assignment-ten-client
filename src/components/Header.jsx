@@ -33,6 +33,12 @@ const Header = () => {
       <li>
         <NavLink to="/allData">All Sports Equipment</NavLink>
       </li>
+      <li>
+        <NavLink to="/contact">Contact</NavLink>
+      </li>
+      <li>
+        <NavLink to="/about">About Us</NavLink>
+      </li>
       {user ? (
         <li>
           <NavLink to="/addEquipment">Add Equipment</NavLink>
@@ -52,7 +58,8 @@ const Header = () => {
 
   return (
     <>
-    <div className="pt-5 fixed w-full bg-blue-50 top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 ">
+    <div className="w-full justify-center flex my-6">
+    <div className="pt-5 fixed w-[95%] bg-blue-50 top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 ">
       <div className="navbar max-w-6xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -132,6 +139,7 @@ const Header = () => {
       </div>
     </div>
     <Tooltip id="my-tooltip" />
+    </div>
     </>
   );
 };

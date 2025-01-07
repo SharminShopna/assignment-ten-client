@@ -1,17 +1,25 @@
 import { Helmet } from "react-helmet";
-
+import { Link } from "react-router-dom";
+import error from '../assets/error1.png';
 
 const Error = () => {
+
+
     return (
         <>
-        <Helmet>
-        <title>Error | Sport</title>
-        <meta name="description" content="Helmet application" />
-      </Helmet>
-        <div className="p-64 space-y-3">
-            <h2 className="text-7xl text-red-700 text-center font-bold">404</h2>
-            <p className="text-3xl text-center">Non-existing Routes.</p>
-        </div>
+            <Helmet>
+                <title>Error | Sport</title>
+                <meta name="description" content="404 Error Page" />
+            </Helmet>
+            <div className="flex flex-col items-center justify-center h-screen space-y-6 my-12">
+                <img src={error} alt="Error" className="h-full w-full" />
+                <Link to="/"
+                    
+                    className="px-8 py-4 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 transition duration-300"
+                >
+                    Go Back
+                </Link>
+            </div>
         </>
     );
 };
