@@ -11,6 +11,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet';
 import { MdOutlineDescription } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 const DiscountEqu = () => {
     const discounts = [
         { title: "50% Off on Footballs", description: "Grab your football now!", price: "150", image: off1 },
@@ -48,7 +49,7 @@ const DiscountEqu = () => {
               <p className='flex gap-2'><MdOutlineDescription size={20} /> {discount.description}</p>
               <p>${discount.price}</p>
               <div className="card-actions justify-start">
-                <button className="btn bg-blue-900 text-white">Get Offer</button>
+                <Link to={'/'} className="btn bg-blue-900 text-white">Go Back</Link>
               </div>
             </div>
           </div>
