@@ -2,6 +2,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
+import { MdOutlineCategory } from "react-icons/md";
+import { FaAudioDescription } from "react-icons/fa6";
 
 const EquipmentDetails = () => {
   const equipments = useLoaderData();
@@ -24,15 +26,15 @@ const EquipmentDetails = () => {
             <img src={image} alt={name} className="h-72 w-full px-6 rounded-3xl" />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Name: {name}</h2>
-            <p>Category: {category}</p>
-            <p>Description: {description}</p>
-            <p>Price: $ {price}</p>
+            <h2 className="card-title">{name}</h2>
+            <p className="flex gap-1 text-lg items-center text-center"><MdOutlineCategory /> {category}</p>
+            <p className="flex item-center gap-1"><FaAudioDescription size={32} /> {description}</p>
+            <p className="text-lg font-bold"> $ {price}</p>
             <p>Customization: {customization}</p>
             <p>Stock: {stock}</p>
             <p>Processing: {processing}</p>
             <p><span className="flex items-center text-yellow-500">
-                   <span className="mr-2 text-gray-600">Rating: {rating}</span>
+                   <span className="mr-2 text-gray-600"> {rating}</span>
                     {Array.from({ length: 5 }, (_, index) => (
                       <svg
                         key={index}

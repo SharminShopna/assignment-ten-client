@@ -26,7 +26,7 @@ const AllHomeFile = () => {
               <p className={`text-sm text-gray-600  text-center ${isDarkMode?"text-white":""}`}>
               Sports equipment and accessories play a crucial role in enhancing performance, safety, and overall enjoyment in various sports and physical activities. From high-quality footwear designed to provide traction and support to durable protective gear like helmets, pads, and gloves, these products are essential for both professional athletes and amateurs. Accessories such as water bottles, sports bags, and training aids also contribute to convenience and functionality, helping athletes stay hydrated, organized, and focused on their training or competition. The right sports equipment can improve performance, reduce the risk of injury, and boost confidence, making it an integral part of every athlete's toolkit. Whether for team sports like football or basketball, or individual pursuits like running or tennis, the right gear ensures that athletes can perform at their best while staying comfortable and safe.</p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 my-6">
                  {
                     equipments.map(equipment => <EquipmentCard key={equipment._id} equipment={equipment}></EquipmentCard>)
                 } 

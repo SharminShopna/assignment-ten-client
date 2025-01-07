@@ -36,9 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/equipment/:id',
-    element:(<PrivateRouter>
-      <EquipmentDetails></EquipmentDetails>
-    </PrivateRouter>),
+    element:<EquipmentDetails></EquipmentDetails>,
     loader: ({params}) => fetch(`https://assignment-ten-server-lyart-beta.vercel.app/equipmentAll/${params.id}`),
   },
   {

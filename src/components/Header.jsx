@@ -52,8 +52,8 @@ const Header = () => {
 
   return (
     <>
-    <div className="pt-5 fixed w-[95%] top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 ">
-      <div className="navbar">
+    <div className="pt-5 fixed w-full bg-blue-50 top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 ">
+      <div className="navbar max-w-6xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

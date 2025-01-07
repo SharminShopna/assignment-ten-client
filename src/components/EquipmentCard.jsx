@@ -7,6 +7,7 @@ import { Tooltip } from "react-tooltip";
 import { Fade } from "react-awesome-reveal";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { MdOutlineCategory } from "react-icons/md";
 
 const EquipmentCard = ({equipment}) => {
     const {isDarkMode} = useContext(AuthContext)
@@ -26,9 +27,9 @@ const EquipmentCard = ({equipment}) => {
                  </Fade >
                
                       <div className="card-body items-start text-start">
-                            <h2 className="card-title">Name: {name}</h2>
-                                <p className="text-lg font-medium">Category: {category}</p>
-                                <p>Description: {description}</p>
+                            <h2 className="card-title">{name}</h2>
+                                <p className="text-lg flex gap-1 items-center text-center font-medium"><MdOutlineCategory /> {category}</p>
+                                <p> {description}</p>
                              <div className="card-actions">
                              <Link to={`/equipment/${_id}`} data-tooltip-id="my-tooltip"
               data-tooltip-content="Click The View Details" className="btn bg-blue-900 text-white">View Details</Link>
