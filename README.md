@@ -25,8 +25,7 @@ An e-commerce platform for sports accessories that allows users to browse, manag
    - Smooth navigation across the site with no reload errors.  
 
 ## Live Link :  
-
-[Visit the Live Website]:  https://assignment-ten-e538a.firebaseapp.com/  
+https://assignment-ten-e538a.firebaseapp.com/  
 
 ##  Technologies  :
 
