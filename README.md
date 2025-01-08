@@ -48,11 +48,44 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<my_firebase_messaging_sender_id>
 REACT_APP_FIREBASE_APP_ID=<my_firebase_app_id>
 MONGODB_URI=<my_mongodb_connection_string>
 
+### Dependencies
+    "@emailjs/browser": "^4.4.1",
+    "aos": "^2.3.4",
+    "firebase": "^11.0.2",
+    "lottie-react": "^2.4.0",
+    "react": "^18.3.1",
+    "react-awesome-reveal": "^4.2.14",
+    "react-dom": "^18.3.1",
+    "react-fast-marquee": "^1.6.5",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^6.28.0",
+    "react-tooltip": "^5.28.0",
+    "sweetalert2": "^11.6.13"
+
+   ### Dev Dependencies
+    "@eslint/js": "^9.15.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.14",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vite": "^6.0.1"
+  
+  
+
 ### Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/equisports.git
+git clone https://github.com/SharminShopna/assignment-ten-client
 cd equisports
 ### Install dependencies:
 
